@@ -69,7 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fetch data from GitHub raw JSON
   async function fetchPrayerData() {
     try {
-      const res = await fetch(API_URL);
+      // Add a timestamp to bypass GitHub's cache and get new uploads instantly
+      const res = await fetch(`${API_URL}?t=${new Date().getTime()}`);
       if (!res.ok) throw new Error("Network response was not ok");
       const data = await res.json();
 
