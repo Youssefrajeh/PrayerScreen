@@ -53,8 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (prayerTimesData) {
       renderPrayerCards();
       updateActivePrayer();
-      // Update active prayer every minute
-      setInterval(updateActivePrayer, 60000);
+      
+      // Softly refresh the data and re-render every 60 seconds (1 minute)
+      // This keeps the page updated without forcing a hard reload that would drop fullscreen
+      setInterval(async () => {
+          await fetchPrayerData();
+          if (prayerTimesData) {
+             renderPrayerCards();
+             updateActivePrayer();
+          }
+      }, 60000);
     }
   }
 
