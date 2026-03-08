@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muslim Wellness Network - Prayer Times</title>
+    <meta name="description" content="Daily prayer times for the Muslim Wellness Centre community.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="glow blob-1"></div>
+        <div class="glow blob-2"></div>
+        <div class="glow blob-3"></div>
+        <!-- Hidden video to trigger Cast to "Video Sites" available on Samsung TVs -->
+        <video id="dummy-video" loop playsinline muted style="opacity: 0.01; width: 1px; height: 1px; position: absolute; pointer-events: none;">
+            <source src="dummy_video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <main class="container">
+
+        <header class="header">
+            <h1 class="title">Prayer Times</h1>
+            <p class="subtitle">Muslim Wellness Centre</p>
+        </header>
+
+        <section class="clock-section">
+            <div class="clock-glass">
+                <span id="current-time">--:--:--</span>
+                <span id="meridiem">--</span>
+            </div>
+            <p class="date-display" id="current-date">-- --, ----</p>
+            <p class="countdown-display" id="countdown-display" style="display: none;"></p>
+        </section>
+
+        <section class="prayer-grid" id="prayer-grid">
+            <!-- Prayer cards will be injected here by JS -->
+            <div class="loading-spinner"></div>
+        </section>
+
+        <div class="fullscreen-prompt" id="fullscreen-prompt">
+            Click anywhere to enter fullscreen mode
+        </div>
+
+        <footer class="footer">
+            <p>Data provided by Muslim Wellness Network &bull; Developed by Youssef Rajeh</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
